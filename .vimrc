@@ -13,6 +13,7 @@ let g:kolor_bold=1                      " Enable bold. Default: 1
 let g:kolor_underlined=0                " Enable underline. Default: 0
 let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 colorscheme kolor
+hi Normal ctermbg=NONE
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
