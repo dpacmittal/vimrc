@@ -1,9 +1,6 @@
 [submodule "bundle/AutoClose"]
 	path = bundle/AutoClose
 	url = https://github.com/vim-scripts/AutoClose.git
-[submodule "bundle/snipmate-snippets"]
-	path = bundle/snipmate-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "bundle/Better-CSS-Syntax-for-Vim"]
 	path = bundle/Better-CSS-Syntax-for-Vim
 	url = https://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
@@ -157,3 +154,6 @@
 [submodule "bundle/ZenCoding.vim"]
 	path = bundle/ZenCoding.vim
 	url = https://github.com/vim-scripts/ZenCoding.vim.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
