@@ -21,6 +21,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle, required
 Bundle 'gmarik/vundle'
+Bundle 'zeis/vim-kolor'
 
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
