@@ -13,7 +13,7 @@ let g:kolor_bold=1                      " Enable bold. Default: 1
 let g:kolor_underlined=0                " Enable underline. Default: 0
 let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 colorscheme kolor
-hi Normal ctermbg=NONE
+" hi Normal ctermbg=NONE
 highlight Comment cterm=italic
 highlight String cterm=italic
 highlight Constant cterm=italic
@@ -27,15 +27,19 @@ call vundle#rc()
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
-" let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-Bundle 'zeis/vim-kolor'
-
+" let Vundle manage Vundle, required" The package manager
+"" The package manager
+Bundle 'gmarik/vundle'        
+" Syntax checking
+Bundle 'scrooloose/syntastic' 
+" Fuzzy search files, buffers, Most-recently-used files
+Bundle 'kien/ctrlp.vim'       
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
 " scripts on GitHub repos
-Bundle 'tpope/vim-fugitive'
-Bundle 'davidhalter/jedi-vim'
+" Git Wrapper in vim
+Bundle 'tpope/vim-fugitive'   
+" Bundle 'davidhalter/jedi-vim'
 " Bundle 'klen/python-mode'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'tpope/vim-rails.git'
