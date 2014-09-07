@@ -8,12 +8,13 @@ set autoindent
 set splitbelow
 set splitright
 set t_Co=256
+set t_ut=				" Fixes background issue in tmux
 let g:kolor_italic=1                    " Enable italic. Default: 1
 let g:kolor_bold=1                      " Enable bold. Default: 1
 let g:kolor_underlined=0                " Enable underline. Default: 0
 let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 colorscheme kolor
-" hi Normal ctermbg=NONE
+" hi Normal ctermbg=NONE		" Background transparency. 
 highlight Comment cterm=italic
 highlight String cterm=italic
 highlight Constant cterm=italic
@@ -49,6 +50,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " scripts from http://vim-scripts.org/vim/scripts.html
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'scrooloose/nerdtree'
 " scripts not on GitHub
 " Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
