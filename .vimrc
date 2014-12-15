@@ -9,12 +9,15 @@ set splitbelow
 set splitright
 set t_Co=256
 set t_ut=				" Fixes background issue in tmux
+set laststatus=2			" Enable statusline (for vim-airline)
 let g:kolor_italic=1                    " Enable italic. Default: 1
 let g:kolor_bold=1                      " Enable bold. Default: 1
 let g:kolor_underlined=0                " Enable underline. Default: 0
 let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+syntax enable
+set background=light
 colorscheme kolor
-" hi Normal ctermbg=NONE		" Background transparency. 
+" hi Normal ctermbg=NONE		" Background transparency.
 highlight Comment cterm=italic
 highlight String cterm=italic
 highlight Constant cterm=italic
@@ -30,9 +33,13 @@ call vundle#rc()
 
 " let Vundle manage Vundle, required" The package manager
 "" The package manager
-Bundle 'gmarik/vundle'        
+Bundle 'gmarik/vundle'
 " Syntax checking
-Bundle 'scrooloose/syntastic' 
+Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
+Bundle 'altercation/vim-colors-solarized'
 " Fuzzy search files, buffers, Most-recently-used files
 Bundle 'kien/ctrlp.vim'       
 " The following are examples of different formats supported.
@@ -49,8 +56,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " scripts from http://vim-scripts.org/vim/scripts.html
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+" Bundle 'FuzzyFinder'
 Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
 " scripts not on GitHub
 " Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -71,3 +79,14 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
 " Put your stuff after this line
+"
+"
+" Settings for neocomplcache
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
