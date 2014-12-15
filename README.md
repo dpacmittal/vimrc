@@ -9,4 +9,5 @@ Install
 =======
 
 1. Clone the repository.
-2. Run git submodule update --init
+2. Run `git submodule init && git submodule update`
+3. Run `:BundleInstall` inside vim.
