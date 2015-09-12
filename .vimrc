@@ -23,6 +23,11 @@ highlight Constant cterm=italic
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Set mapleader to comma
+let mapleader=","
+
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -126,12 +131,8 @@ set backupdir=/tmp
 set directory=/tmp
 
 
-" Set mapleader to comma
-let mapleader=","
-
 " Set indent guide size
 set background=dark
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
-
