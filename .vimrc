@@ -122,8 +122,8 @@ map <C-n> :NERDTreeTabsToggle<CR>
 
 
 " Don't clutter project directories. Save swp, swo files in TEMP dir
-set backupdir=$TEMP//
-set directory=$TEMP//
+set backupdir=/tmp
+set directory=/tmp
 
 
 " Set mapleader to comma
