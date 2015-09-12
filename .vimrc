@@ -26,6 +26,7 @@ filetype off                  " required
 " Set mapleader to comma
 let mapleader=","
 
+set showcmd
 
 
 " set the runtime path to include Vundle and initialize
