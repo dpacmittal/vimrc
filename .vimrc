@@ -45,6 +45,7 @@ Plugin 'gmarik/vundle'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Syntax checking
+Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplcache.vim'
