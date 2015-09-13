@@ -64,6 +64,7 @@ Plugin 'flazz/vim-colorschemes'
 " scripts on GitHub repos
 " Git Wrapper in vim
 Plugin 'tpope/vim-fugitive'   
+Plugin 'tpope/vim-surround'
 " Bundle 'davidhalter/jedi-vim'
 " Bundle 'klen/python-mode'
 " Bundle 'Lokaltog/vim-easymotion'
