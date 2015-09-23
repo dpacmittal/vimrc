@@ -55,6 +55,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'jiangmiao/auto-pairs'
 
 " Fuzzy search files, buffers, Most-recently-used files
 Plugin 'kien/ctrlp.vim'       
@@ -66,6 +67,7 @@ Plugin 'flazz/vim-colorschemes'
 " Git Wrapper in vim
 Plugin 'tpope/vim-fugitive'   
 Plugin 'tpope/vim-surround'
+Plugin 'Chiel92/vim-autoformat'
 " Bundle 'davidhalter/jedi-vim'
 " Bundle 'klen/python-mode'
 " Bundle 'Lokaltog/vim-easymotion'
@@ -77,10 +79,12 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'L9'
 " Bundle 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
+Plugin 'mxw/vim-jsx'
 " scripts not on GitHub
 " Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -139,3 +143,5 @@ set background=dark
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
+
+set exrc
