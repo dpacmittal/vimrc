@@ -48,7 +48,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
-Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'altercation/vim-colors-solarized'
@@ -79,7 +79,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'L9'
 " Bundle 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'bling/vim-airline'
@@ -107,15 +107,6 @@ filetype plugin on
 " Put your stuff after this line
 "
 "
-" Settings for neocomplcache
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:airline_theme='molokai' 
 " let base16colorspace=256
 colorscheme molokai
@@ -145,3 +136,9 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 
 set exrc
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+
+source $HOME/.vim/neocomplete.vim
