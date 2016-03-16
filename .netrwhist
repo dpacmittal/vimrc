@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/etc/phpmyadmin/conf.d'
-let g:netrw_dirhist_2='/home/dpac/.vim/vimrc'
-let g:netrw_dirhist_3='/home/dpac/.vim'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='scp://root@isixsigma.com:22000//home/webxmedia/websites/isixsigma.com/wp-content/plugins/'
+let g:netrw_dirhist_2='scp://root@isixsigma.com:22000//home/webxmedia/websites/isixsigma.com/wp-content/plugins/sso/'
+let g:netrw_dirhist_3='scp://root@isixsigma.com:22000//home/webxmedia/'
+let g:netrw_dirhist_4='scp://root@isixsigma.com:22000//home/webxmedia/websites/'
+let g:netrw_dirhist_5='scp://root@isixsigma.com:22000//home/webxmedia/websites/isixsigma.com/'
+let g:netrw_dirhist_6='scp://root@isixsigma.com:22000//home/webxmedia/websites/isixsigma.com/wp-content/'
+let g:netrw_dirhist_7='scp://root@isixsigma.com:22000//home/webxmedia/websites/isixsigma.com/wp-content/plugins/'
+let g:netrw_dirhist_8='scp://root@isixsigma.com:22000//home/webxmedia/websites/isixsigma.com/wp-content/plugins/sso/'

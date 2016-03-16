@@ -50,6 +50,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'tpope/vim-vinegar'
 " Plugin 'Shougo/neosnippet'
 " Plugin 'Shougo/neosnippet-snippets'
 
@@ -78,7 +79,8 @@ Plugin 'jiangmiao/auto-pairs'
 
 " Fuzzy search files, buffers, Most-recently-used files
 Plugin 'kien/ctrlp.vim'       
-
+" Elixir syntax highlighting
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'flazz/vim-colorschemes'
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
@@ -101,7 +103,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'mxw/vim-jsx'
 " scripts not on GitHub
@@ -166,3 +169,11 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set st=4
+set shiftwidth=4
+
+set undofile
+set undodir=/tmp
+
+
+" Fix jsx indentation for .js extension
+let g:jsx_ext_required=0
