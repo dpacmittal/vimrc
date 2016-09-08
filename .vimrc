@@ -144,7 +144,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Ctrl+N shortcut to open nerdtree
-map <C-n> :NERDTreeTabsToggle<CR>
+map <leader>n :NERDTreeTabsToggle<CR>
 
 
 " Don't clutter project directories. Save swp, swo files in TEMP dir
