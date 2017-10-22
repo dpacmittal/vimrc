@@ -31,7 +31,7 @@ set showcmd
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 " alternatively, pass a path where Vundle should install bundles
 "let path = '~/some/path/here'
 "call vundle#rc(path)
@@ -45,7 +45,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Syntax checking
-Plugin 'marijnh/tern_for_vim'
+" Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplete.vim'
@@ -61,7 +61,8 @@ Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-Plugin 'justinj/vim-react-snippets'
+
+" Plugin 'justinj/vim-react-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -73,28 +74,19 @@ let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
 
 " Fuzzy search files, buffers, Most-recently-used files
-Plugin 'kien/ctrlp.vim'       
-" Elixir syntax highlighting
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'flazz/vim-colorschemes'
-" The following are examples of different formats supported.
-" Keep bundle commands between here and filetype plugin indent on.
-" scripts on GitHub repos
+Plugin 'junegunn/fzf'
 " Git Wrapper in vim
 Plugin 'tpope/vim-fugitive'   
 Plugin 'tpope/vim-surround'
-Plugin 'Chiel92/vim-autoformat'
-" Bundle 'davidhalter/jedi-vim'
-" Bundle 'klen/python-mode'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'tpope/vim-rails.git'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
+
+" Uses external autoformat program to format code
+" Plugin 'Chiel92/vim-autoformat' 
+
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " scripts from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
@@ -108,28 +100,14 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'mxw/vim-jsx'
-" scripts not on GitHub
-" Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///home/gmarik/path/to/plugin'
-" ...
+Plugin 'flazz/vim-colorschemes'
+
+
+call vundle#end()            " required
 
 filetype plugin indent on     " required
 filetype plugin on
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
-" Put your stuff after this line
-"
-"
+
 let g:airline_theme='molokai' 
 " let base16colorspace=256
 colorscheme molokai
@@ -158,7 +136,6 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 
-set exrc
 
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -174,18 +151,3 @@ set shiftwidth=4
 
 set undofile
 set undodir=/tmp
-
-
-" Fix jsx indentation for .js extension
-let g:jsx_ext_required=0
-
-" Shortcuts for splits
-nmap <leader>swh  :topleft  vnew<CR>
-nmap <leader>swl :botright vnew<CR>
-nmap <leader>swk    :topleft  new<CR>
-nmap <leader>swj  :botright new<CR>
-" buffer
-nmap <leader>sh   :leftabove  vnew<CR>
-nmap <leader>sl  :rightbelow vnew<CR>
-nmap <leader>sk     :leftabove  new<CR>
-nmap <leader>sj   :rightbelow new<CR>
