@@ -15,7 +15,6 @@ let g:kolor_bold=1                      " Enable bold. Default: 1
 let g:kolor_underlined=0                " Enable underline. Default: 0
 let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 syntax enable
-set background=dark
 " hi Normal ctermbg=NONE		" Background transparency.
 highlight Comment cterm=italic
 highlight String cterm=italic
@@ -153,3 +152,4 @@ set undodir=/tmp
 
 
 colorscheme molokai
+set background=light "fix white colored tabspace"
