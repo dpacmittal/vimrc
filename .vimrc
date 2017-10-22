@@ -41,7 +41,7 @@ call vundle#begin()
 "" The package manager
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'nathanaelkane/vim-indent-guides' "Causes ugly white tabspace issue"
 
 " Syntax checking
 " Plugin 'marijnh/tern_for_vim'
@@ -127,7 +127,6 @@ set directory=/tmp
 
 
 " Set indent guide size
-set background=dark
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
@@ -149,5 +148,5 @@ set undofile
 set undodir=/tmp
 
 
-colorscheme solarized
+colorscheme molokai
 set background=light "fix white colored tabspace"
