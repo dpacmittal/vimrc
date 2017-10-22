@@ -110,7 +110,6 @@ filetype plugin on
 
 let g:airline_theme='molokai' 
 " let base16colorspace=256
-colorscheme molokai
 
 
 " Shortcuts
@@ -151,3 +150,6 @@ set shiftwidth=4
 
 set undofile
 set undodir=/tmp
+
+
+colorscheme molokai
