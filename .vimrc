@@ -71,8 +71,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
 " Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
@@ -151,5 +149,5 @@ set undofile
 set undodir=/tmp
 
 
-colorscheme molokai
+colorscheme solarized
 set background=light "fix white colored tabspace"
