@@ -76,7 +76,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
 
 " Fuzzy search files, buffers, Most-recently-used files
-Plugin 'junegunn/fzf'
+" Plugin 'junegunn/fzf'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 " Git Wrapper in vim
 Plugin 'tpope/vim-fugitive'   
 Plugin 'tpope/vim-surround'
