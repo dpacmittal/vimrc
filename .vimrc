@@ -25,6 +25,8 @@ filetype off                  " required
 " Set mapleader to comma
 let mapleader=","
 
+set hidden              " Make buffers hidable.
+set paste               " Make paste by default. Doesn't harm.
 set showcmd
 
 
