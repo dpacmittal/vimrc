@@ -1,21 +1,47 @@
 syntax on
-set nu
-set showmatch
-set ignorecase
-set hlsearch
-set incsearch
+
+" show linenumber
+set number
+set relativenumber
+
+set showmatch                           " show matching pair of bracket
+
+" Search options
+set ignorecase                          " ignorecase
+set hlsearch                            " highlight search matches
+set incsearch                           " incremental search
+
 set autoindent
-set splitbelow
-set splitright
-set t_Co=256
-set t_ut=				" Fixes background issue in tmux
-set laststatus=2			" Enable statusline (for vim-airline)
+set splitbelow                          " put new split below for horizontal splits
+set splitright                          " put new plit on right for vertical splits
+set t_Co=256                            " use 256 colors
+set t_ut=				                " Fixes background issue in tmux
+set laststatus=2			            " Enable statusline (for vim-airline)
 let g:kolor_italic=1                    " Enable italic. Default: 1
 let g:kolor_bold=1                      " Enable bold. Default: 1
 let g:kolor_underlined=0                " Enable underline. Default: 0
 let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
-syntax enable
+" syntax enable
 " hi Normal ctermbg=NONE		" Background transparency.
+
+" Don't clutter project directories. Save swp, swo files in TEMP dir
+set backupdir=/tmp
+set directory=/tmp
+
+" tabs and spacing
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+set shiftwidth=4
+
+set undofile
+set undodir=/tmp
+
+" color scheme
+colorscheme molokai
+set background=dark "fix white colored tabspace"
+
+
 highlight Comment cterm=italic
 highlight String cterm=italic
 highlight Constant cterm=italic
@@ -29,87 +55,63 @@ set hidden              " Make buffers hidable.
 set paste               " Make paste by default. Doesn't harm.
 set showcmd
 
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install bundles
-"let path = '~/some/path/here'
-"call vundle#rc(path)
-
+" Install vim plug if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 
-" let Vundle manage Vundle, required" The package manager
-"" The package manager
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
+
 
 " Plugin 'nathanaelkane/vim-indent-guides' "Causes ugly white tabspace issue"
 
-" Syntax checking
-" Plugin 'marijnh/tern_for_vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'tpope/vim-vinegar'
-" Plugin 'Shougo/neosnippet'
-" Plugin 'Shougo/neosnippet-snippets'
+" Auto-completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Highlights color in hex, rgba?, hsla?
+Plug 'gorodinskiy/vim-coloresque'
 
+" Git icons in gutters
+Plug 'airblade/vim-gitgutter'
 
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-" Plugin 'justinj/vim-react-snippets'
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Plugin 'pangloss/vim-javascript'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jiangmiao/auto-pairs'
+" Auto create matching pair of brackets
+Plug 'jiangmiao/auto-pairs'
 
 " Fuzzy search files, buffers, Most-recently-used files
-" Plugin 'junegunn/fzf'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
+
+" Status line
+Plug 'vim-airline/vim-airline'
+
 " Git Wrapper in vim
-Plugin 'tpope/vim-fugitive'   
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'   
 
-" Uses external autoformat program to format code
-" Plugin 'Chiel92/vim-autoformat' 
+" Allows surrounding selected text with quotes/brackets etc.
+Plug 'tpope/vim-surround'
 
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" scripts from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Bundle 'FuzzyFinder'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'terryma/vim-multiple-cursors'
+" Nerdtree file manager
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'chriskempson/base16-vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'flazz/vim-colorschemes'
+" Multiple cursors on pressing ctrl+n
+Plug 'mg979/vim-visual-multi'
+
+Plug 'pangloss/vim-javascript'
+Plug 'flazz/vim-colorschemes'
 
 
-call vundle#end()            " required
+call plug#end()            " required
 
 filetype plugin indent on     " required
 filetype plugin on
 
 let g:airline_theme='molokai' 
-" let base16colorspace=256
+let g:airline_powerline_fonts=1
+
 
 
 " Shortcuts
@@ -120,13 +122,10 @@ let g:airline_theme='molokai'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Ctrl+N shortcut to open nerdtree
+" ,n shortcut to open nerdtree
 map <leader>n :NERDTreeTabsToggle<CR>
 
 
-" Don't clutter project directories. Save swp, swo files in TEMP dir
-set backupdir=/tmp
-set directory=/tmp
 
 
 " Set indent guide size
@@ -139,17 +138,5 @@ let g:indent_guides_start_level=2
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 
-source $HOME/.vim/neocomplete.vim
+source $HOME/.vim/coc.vim
 
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
-set expandtab       " tabs are spaces
-set st=4
-set shiftwidth=4
-
-set undofile
-set undodir=/tmp
-
-
-colorscheme molokai
-set background=light "fix white colored tabspace"

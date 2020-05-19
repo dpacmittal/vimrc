@@ -4,3 +4,5 @@
 bundle/*
 bundle/*/
 !bundle/vundle/
+plugged/
+autoload
