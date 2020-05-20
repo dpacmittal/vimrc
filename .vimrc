@@ -37,10 +37,6 @@ set shiftwidth=4
 set undofile
 set undodir=/tmp
 
-" color scheme
-colorscheme molokai
-set background=dark "fix white colored tabspace"
-
 
 highlight Comment cterm=italic
 highlight String cterm=italic
@@ -85,6 +81,7 @@ Plug 'junegunn/fzf'
 
 " Status line
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Git Wrapper in vim
 Plug 'tpope/vim-fugitive'   
@@ -102,6 +99,7 @@ Plug 'mg979/vim-visual-multi'
 
 Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
 
 
 call plug#end()            " required
@@ -139,4 +137,11 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 
 source $HOME/.vim/coc.vim
+
+
+" color scheme
+colorscheme gruvbox
+set termguicolors  " Fixes 256 color according to https://github.com/morhetz/gruvbox/wiki/Terminal-specific
+set background=dark "fix white colored tabspace"
+
 
