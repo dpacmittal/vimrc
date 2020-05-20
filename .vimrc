@@ -109,7 +109,7 @@ filetype off                  " required
 let mapleader=","
 
 set hidden              " Make buffers hidable.
-set paste               " Make paste by default. Doesn't harm.
+" set paste               " Make paste by default. Doesn't harm. Update: Apparently its not recommended
 set showcmd
 
 
@@ -154,7 +154,7 @@ colorscheme gruvbox
 set termguicolors  " Fixes 256 color according to https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 set background=dark "fix white colored tabspace"
 
-set autoindent
+set ai
 set clipboard+=unnamedplus
 
 autocmd FileType php let b:coc_root_patterns = ['wp-config.php']
