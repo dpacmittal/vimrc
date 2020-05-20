@@ -111,7 +111,8 @@ let mapleader=","
 set hidden              " Make buffers hidable.
 set paste               " Make paste by default. Doesn't harm.
 set showcmd
-
+set wrap
+set autoread							" Automatically update buffer when file on disk updates
 
 
 filetype plugin indent on     " required
