@@ -1,5 +1,67 @@
-syntax on
+" Install vim plug if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+call plug#begin('~/.vim/plugged')
+
+" Plugin 'nathanaelkane/vim-indent-guides' "Causes ugly white tabspace issue"
+
+" Auto-completion
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+
+" Highlights color in hex, rgba?, hsla?
+Plug 'gorodinskiy/vim-coloresque'
+
+" Git icons in gutters
+Plug 'airblade/vim-gitgutter'
+
+" Auto create matching pair of brackets
+Plug 'jiangmiao/auto-pairs'
+let g:AutoPairsShortcutToggle='<C-b>'
+
+" Fuzzy search files, buffers, Most-recently-used files
+Plug 'junegunn/fzf'
+
+" Status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Git Wrapper in vim
+Plug 'tpope/vim-fugitive'   
+
+" Allows surrounding selected text with quotes/brackets etc.
+Plug 'tpope/vim-surround'
+
+" Nerdtree file manager
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
+
+" Multiple cursors on pressing ctrl+n
+Plug 'mg979/vim-visual-multi'
+
+Plug 'pangloss/vim-javascript'
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+call plug#end()            " required
+
+" -------------------------
+" Start customizations
+" -------------------------
+syntax on
 " show linenumber
 set number
 set relativenumber
@@ -11,7 +73,6 @@ set ignorecase                          " ignorecase
 set hlsearch                            " highlight search matches
 set incsearch                           " incremental search
 
-set autoindent
 set splitbelow                          " put new split below for horizontal splits
 set splitright                          " put new plit on right for vertical splits
 set t_Co=256                            " use 256 colors
@@ -51,61 +112,9 @@ set hidden              " Make buffers hidable.
 set paste               " Make paste by default. Doesn't harm.
 set showcmd
 
-" Install vim plug if not installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
-
-call plug#begin('~/.vim/plugged')
-
-
-" Plugin 'nathanaelkane/vim-indent-guides' "Causes ugly white tabspace issue"
-
-" Auto-completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Highlights color in hex, rgba?, hsla?
-Plug 'gorodinskiy/vim-coloresque'
-
-" Git icons in gutters
-Plug 'airblade/vim-gitgutter'
-
-" Auto create matching pair of brackets
-Plug 'jiangmiao/auto-pairs'
-
-" Fuzzy search files, buffers, Most-recently-used files
-Plug 'junegunn/fzf'
-
-" Status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Git Wrapper in vim
-Plug 'tpope/vim-fugitive'   
-
-" Allows surrounding selected text with quotes/brackets etc.
-Plug 'tpope/vim-surround'
-
-" Nerdtree file manager
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jistr/vim-nerdtree-tabs'
-
-" Multiple cursors on pressing ctrl+n
-Plug 'mg979/vim-visual-multi'
-
-Plug 'pangloss/vim-javascript'
-Plug 'flazz/vim-colorschemes'
-Plug 'morhetz/gruvbox'
-
-
-call plug#end()            " required
 
 filetype plugin indent on     " required
-filetype plugin on
 
 let g:airline_theme='molokai' 
 let g:airline_powerline_fonts=1
@@ -114,7 +123,7 @@ let g:airline_powerline_fonts=1
 
 " Shortcuts
 " F8 to disable all autoindenting - see http://vim.wikia.com/wiki/How_to_stop_auto_indenting
-:nnoremap <F8> :setl noai nocin nosi inde=<CR>
+" :nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 " Start nerdtree automatically when no file is specified
 autocmd StdinReadPre * let s:std_in=1
@@ -140,8 +149,12 @@ source $HOME/.vim/coc.vim
 
 
 " color scheme
+let g:gruvbox_italic=1
 colorscheme gruvbox
 set termguicolors  " Fixes 256 color according to https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 set background=dark "fix white colored tabspace"
 
+set autoindent
+set clipboard+=unnamedplus
 
+autocmd FileType php let b:coc_root_patterns = ['wp-config.php']
