@@ -12,15 +12,6 @@ call plug#begin('~/.vim/plugged')
 " Auto-completion
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 
 " Highlights color in hex, rgba?, hsla?
 Plug 'gorodinskiy/vim-coloresque'
@@ -159,3 +150,4 @@ set ai
 set clipboard+=unnamedplus
 
 autocmd FileType php let b:coc_root_patterns = ['wp-config.php']
+let g:coc_global_extensions = ['coc-css', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-eslint', 'coc-tslint', 'coc-prettier', 'coc-phpls']
