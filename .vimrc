@@ -159,3 +159,7 @@ set clipboard+=unnamedplus
 
 autocmd FileType php let b:coc_root_patterns = ['wp-config.php']
 let g:coc_global_extensions = ['coc-css', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-eslint', 'coc-tslint', 'coc-prettier', 'coc-phpls']
+
+" Code folding
+set foldmethod=indent
+map <leader>f zA
