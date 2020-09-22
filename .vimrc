@@ -29,7 +29,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Auto create matching pair of brackets
 Plug 'jiangmiao/auto-pairs'
-" let g:AutoPairsShortcutToggle='<C-b>'
+let g:AutoPairsShortcutToggle='<Leader>p'
 
 " Fuzzy search files, buffers, Most-recently-used files
 Plug 'junegunn/fzf'
