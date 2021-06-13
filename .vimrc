@@ -164,3 +164,6 @@ let g:coc_global_extensions = ['coc-css', 'coc-tsserver', 'coc-json', 'coc-snipp
 " Code folding
 set foldmethod=indent
 map <leader>f zA
+
+" CocList shortcut
+map <leader>l :CocList files<CR>
