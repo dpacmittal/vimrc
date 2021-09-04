@@ -150,7 +150,7 @@ source $HOME/.vim/coc.vim
 
 " color scheme
 let g:gruvbox_italic=1
-set term=xterm-256color
+" set term=xterm-256color
 colorscheme gruvbox
 set termguicolors  " Fixes 256 color according to https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 set background=dark "fix white colored tabspace"
