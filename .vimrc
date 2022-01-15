@@ -55,6 +55,9 @@ Plug 'mg979/vim-visual-multi'
 Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()            " required
 
 " -------------------------
@@ -167,3 +170,10 @@ map <leader>f zA
 
 " CocList shortcut
 map <leader>l :CocList files<CR>
+
+" Telescope shortcuts
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
