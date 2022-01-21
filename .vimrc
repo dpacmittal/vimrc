@@ -58,6 +58,8 @@ Plug 'morhetz/gruvbox'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 call plug#end()            " required
 
 " -------------------------
